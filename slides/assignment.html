@@ -84,6 +84,10 @@ body{
 .cover .big{font-weight:800;font-size:50px;line-height:1.06;letter-spacing:-1.4px;color:#fff;max-width:24ch}
 .cover .big em{font-style:normal;color:var(--peri2)}
 .cover .sub{font-size:17px;color:#aebbcd;max-width:64ch;line-height:1.55;margin-top:18px}
+.cover .sub-list{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:9px}
+.cover .sub-list li{position:relative;padding-left:22px}
+.cover .sub-list li:before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:2px;background:var(--peri)}
+.cover .sub-list b{color:#dbe4f0;font-weight:700}
 .cover .for{margin-top:30px;display:flex;align-items:center;gap:14px;font-size:13px;color:#8fa0b6;flex-wrap:wrap}
 .cover .for .pill{border:1px solid rgba(255,255,255,.16);border-radius:30px;padding:7px 15px;color:#dbe4f0}
 .cover .for .pill b{color:#fff;font-weight:700}
@@ -172,7 +176,13 @@ body{
   <div class="cover">
     <div class="eyebrow">The assignment · breakout rooms · ±60 min</div>
     <div class="big">Move the secrets out of Git, ship a schema migration, and deploy a <em>module</em></div>
-    <div class="sub">One warm-up together, then three parts solo. Warm-up: deploy to develop and prod, and find the broken database connections. Part 1: hook up a secret for the db-connection: two connections get file-based secrets, and a feature-branch PR ships the fix that makes develop Valid. Part 2: a schema change ships as a golang-migrate up/down pair that the pipeline applies before the screens land. Part 3: a third-party module rides the same pipeline, and a fresh gateway boots complete.</div>
+    <div class="sub">One warm-up together, then three parts solo.</div>
+    <ul class="sub sub-list">
+      <li><b>Warm-up:</b> deploy to develop and prod, and find the broken database connections.</li>
+      <li><b>Part 1:</b> hook up a secret for the db-connection: two connections get file-based secrets, and a feature-branch PR ships the fix that makes develop Valid — then you promote it to prod.</li>
+      <li><b>Part 2:</b> a schema change ships as a golang-migrate up/down pair that the pipeline applies before the screens land.</li>
+      <li><b>Part 3:</b> a third-party module rides the same pipeline, and a fresh gateway boots complete.</li>
+    </ul>
     <div class="for">
       <span>Floating to help</span>
       <span class="pill"><b>Sam</b></span>
